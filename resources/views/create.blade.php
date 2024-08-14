@@ -8,10 +8,10 @@
     <link href="/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .btn-group {
-            margin-right: 10px; /* Add some spacing between buttons and "Add Contact" button */
+            margin-right: 10px; 
         }
         .action-links a {
-            margin-right: 10px; /* Add spacing between action links */
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -63,7 +63,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

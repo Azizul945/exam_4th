@@ -28,7 +28,6 @@
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
 
-                        <!-- Sorting and Add Contact Button -->
                         <div class="d-flex align-items-center">
                            
                             <div class="dropdown me-2">
@@ -49,7 +48,7 @@
                         <table class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <tr class="text-center">
-                                    <th>Sl</th> <!-- Serial Number -->
+                                    <th>Sl</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -61,7 +60,7 @@
                             <tbody>
                                 @foreach ($contact as $index => $item)
                                     <tr>
-                                        <td>{{ $index + 1 }}</td> <!-- Serial Number -->
+                                        <td>{{ $index + 1 }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>{{ $item->phone }}</td>

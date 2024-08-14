@@ -8,13 +8,13 @@
     <link href="/bootstrap-5.0.2-dist/css/bootstrap.css" rel="stylesheet">
     <style>
         .btn-group {
-            margin-right: 10px; /* Add some spacing between buttons and "Add Contact" button */
+            margin-right: 10px; 
         }
         .action-links a {
-            margin-right: 10px; /* Add spacing between action links */
+            margin-right: 10px;
         }
         .table-responsive {
-            overflow-x: auto; /* Ensures the table is scrollable on smaller screens */
+            overflow-x: auto; 
         }
     </style>
 </head>
@@ -50,9 +50,8 @@
                                          <td>{{ $contact->email }}</td>
                                          <td>{{ $contact->phone }}</td>
                                          <td>{{ $contact->address }}</td>
-                                         <td>{{ \Carbon\Carbon::parse($contact->created_at)->format('d M Y, h:i A') }}</td>
-                                        
-                                        
+                                         <td>{{ $contact->created_at->format('Y-m-d') }}</td>
+                                
                                      </tr>
                                 </tbody>
                             </table>

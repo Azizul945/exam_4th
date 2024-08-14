@@ -36,21 +36,14 @@ class ContactController extends Controller
     }
 
 
-
-
-
-
-
-
     public function search(Request $request)
     {
         $search = $request->input('search'); // Get the search input from the request
         
-        // Ensure the search term is properly included in the query
         $contact = Contact::where(function($query) use ($search) {
             $query->where('email', 'like', "%{$search}%")
                   ->orWhere('name', 'like', "%{$search}%");
-        })->get(); // Retrieve the results from the database
+        })->get(); 
     
         return view('index', compact('contact', 'search'));
     }
@@ -80,7 +73,7 @@ class ContactController extends Controller
           
         ]);
     
-        // Redirect to the form with a success message
+    
         return redirect('/contacts')->with('status', 'Contact created successfully!');
     }
     
@@ -94,7 +87,7 @@ class ContactController extends Controller
     
     public function update(Request $request, int $id)
     {
-        // Validate the incoming request data
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => [
@@ -106,7 +99,7 @@ class ContactController extends Controller
             'address' => 'nullable|string|max:255',
         ]);
 
-        // Find the contact and update it
+     
         $contact = Contact::findOrFail($id);
         $contact->update([
             'name' => $request->name,
@@ -115,25 +108,23 @@ class ContactController extends Controller
             'address' => $request->address,
         ]);
 
-        // Redirect to the previous page with a success message
+
         return redirect()->back()->with('status', 'Contact updated successfully!');
     }
 
     public function show(int $id){
 
         $contact = Contact::find($id);
-        //return $contact;
+       
         return view('show',compact('contact'));
-   }
+    }
 
     public function destroy(int $id){
 
         $contact = Contact::findOrFail($id);
         $contact ->delete();
-
         return redirect()->back()->with('status','Contact deleted successfully!');
         
     }
-
 
 }
